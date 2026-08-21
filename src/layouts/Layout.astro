@@ -1,0 +1,21 @@
+---
+interface Props { title: string; description?: string; }
+const { title, description = "Pokkie turns GitHub profiles into expressive, shareable cards." } = Astro.props;
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fff7fb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body><slot /></body>
+</html>
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+  :root { --ink:#281d27; --muted:#786b76; --paper:#fff7fb; --card:#fff; --line:#f0dce7; --pink:#ff4f93; --pink-soft:#ffd7e7; --hot:#ff176f; --shadow:0 22px 70px rgba(140,35,82,.15); }
+  *{box-sizing:border-box;margin:0}[hidden]{display:none!important} html{scroll-behavior:smooth;background:var(--paper)} body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;line-height:1.6;overflow-x:hidden} a{color:inherit;text-decoration:none} button,input,select{font:inherit} button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--pink);outline-offset:4px}.container{width:min(1120px,calc(100% - 40px));margin-inline:auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font:500 12px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px rgba(255,79,147,.14)}.section-heading{max-width:650px;margin-bottom:42px}.section-heading h2{margin-top:14px;font-size:clamp(2.3rem,5vw,4.6rem);letter-spacing:-.08em;line-height:.95}.section-heading p{margin-top:18px;color:var(--muted);font-size:1.05rem}code,pre{font-family:'DM Mono',monospace}.primary{display:inline-flex;align-items:center;gap:10px;padding:15px 21px;border:0;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 12px 24px rgba(40,29,39,.15);transition:transform .2s,box-shadow .2s}.primary:hover{transform:translateY(-3px);box-shadow:0 18px 30px rgba(255,23,111,.25)}.primary span{color:var(--pink)}.shock{position:relative;overflow:hidden}.shock::after{content:'';position:absolute;inset:50%;width:8px;height:8px;border:2px solid var(--pink);border-radius:50%;opacity:0;transform:translate(-50%,-50%)}.shock:hover::after,.shock:focus-visible::after{animation:wave .7s ease-out}.electric:hover{animation:jolt .22s linear 2}@keyframes wave{0%{width:8px;height:8px;opacity:.9}100%{width:180%;height:180%;opacity:0}}@keyframes jolt{0%,100%{transform:translateY(-3px) rotate(0)}50%{transform:translateY(-3px) rotate(-1deg)}75%{transform:translateY(-3px) rotate(1deg)}}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes float{50%{transform:rotate(4deg) translateY(-10px)}}@media(max-width:640px){.container{width:min(100% - 28px,1120px)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>

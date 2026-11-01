@@ -1,8 +1,8 @@
-import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel';
+import { defineConfig } from "astro/config";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  output: 'static',
+  output: "static",
   adapter: vercel(),
-  site: 'https://github-profile-card-blue.vercel.app',
+  site: "https://github-profile-card-blue.vercel.app",
 });

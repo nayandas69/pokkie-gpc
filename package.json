@@ -1,18 +1,33 @@
 {
-    "name": "pokkie-gpc",
-    "version": "1.0.0",
-    "description": "Beautiful landing page for GitHub Profile Card API",
-    "type": "module",
-    "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview"
+  "name": "pokkie-gpc",
+  "version": "1.0.0",
+  "description": "Beautiful landing page for GitHub Profile Card API",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "astro": "^7.4.4"
+  },
+  "devDependencies": {
+    "@astrojs/vercel": "^11.0.17",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2"
+  },
+  "overrides": {
+    "@vercel/cli-config": {
+      "zod": "^4.6.7"
     },
-    "dependencies": {
-        "astro": "^7.2.4"
+    "@vercel/routing-utils": {
+      "path-to-regexp": "^6.3.0"
     },
-    "devDependencies": {
-        "@astrojs/vercel": "^11.0.7"
+    "@vercel/nft": {
+      "glob": "^14.0.3"
     }
+  }
 }

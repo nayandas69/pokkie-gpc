@@ -1,5 +1,77 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="Page not found — Pokkie"><main class="not-found"><span class="mark">P</span><span class="eyebrow">404 / wrong turn</span><h1>That page has gone off-piste.</h1><p>The link may be old, or the page may never have existed. Either way, there&apos;s a lovely profile card waiting back home.</p><a href="/">Back to Pokkie <span>↗</span></a></main></Layout>
-<style>.not-found{min-height:100vh;display:grid;place-content:center;justify-items:start;gap:20px;width:min(620px,calc(100% - 40px));margin:auto}.mark{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--ink);color:var(--pink-soft);font:500 24px 'DM Mono',monospace;transform:rotate(-7deg)}.eyebrow{margin-top:35px}.not-found h1{font-size:clamp(3rem,8vw,6rem);letter-spacing:-.09em;line-height:.92}.not-found p{max-width:470px;color:var(--muted);font-size:1.05rem}.not-found a{display:inline-flex;align-items:center;gap:10px;padding:15px 21px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:800;box-shadow:0 12px 24px rgba(40,29,39,.15);transition:transform .2s,box-shadow .2s}.not-found a:hover{transform:translateY(-3px);box-shadow:0 18px 30px rgba(255,23,111,.25)}.not-found a span{color:var(--pink);margin-left:0}</style>
+
+<Layout title="Page not found — Pokkie">
+  <main class="not-found">
+    <span class="mark">P</span>
+    <span class="eyebrow">404 / wrong turn</span>
+    <h1>That page has gone off-piste.</h1>
+    <p>
+      The link may be old, or the page may never have existed. Either way,
+      there&apos;s a lovely profile card waiting back home.
+    </p>
+    <a href="/">
+      Back to Pokkie <span>↗</span>
+    </a>
+  </main>
+</Layout>
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    justify-items: start;
+    gap: 20px;
+    width: min(620px, calc(100% - 40px));
+    margin: auto;
+  }
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--ink);
+    color: var(--pink-soft);
+    font:
+      500 24px "DM Mono",
+      monospace;
+    transform: rotate(-7deg);
+  }
+  .eyebrow {
+    margin-top: 35px;
+  }
+  .not-found h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: -0.09em;
+    line-height: 0.92;
+  }
+  .not-found p {
+    max-width: 470px;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  .not-found a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 21px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 800;
+    box-shadow: 0 12px 24px rgba(40, 29, 39, 0.15);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .not-found a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(255, 23, 111, 0.25);
+  }
+  .not-found a span {
+    color: var(--pink);
+    margin-left: 0;
+  }
+</style>

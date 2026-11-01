@@ -1,2 +1,74 @@
-<section class="strip"><div class="container strip-grid"><div><span class="eyebrow">Performance matters</span><h2>Pretty fast. Properly usable.</h2></div><div class="metrics"><div><strong>SVG</strong><span>sharp at every size</span></div><div><strong>30s</strong><span>health refresh</span></div><div><strong>0</strong><span>tracking scripts</span></div></div></div></section><style>.strip{padding:78px 0;border-block:1px solid var(--line);background:var(--pink-soft)}.strip-grid{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}.strip h2{max-width:480px;margin-top:16px;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.08em;line-height:1}.metrics{display:flex;gap:35px}.metrics div{display:grid;gap:4px}.metrics strong{font-size:1.5rem;letter-spacing:-.06em}.metrics span{color:var(--muted);font:10px 'DM Mono',monospace;text-transform:uppercase}@media(max-width:720px){.strip-grid{display:grid}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metrics strong{font-size:1.25rem}}
+<section class="strip">
+  <div class="container strip-grid">
+    <div>
+      <span class="eyebrow">Performance matters</span>
+      <h2>Pretty fast. Properly usable.</h2>
+    </div>
+    <div class="metrics">
+      <div>
+        <strong>SVG</strong>
+        <span>sharp at every size</span>
+      </div>
+      <div>
+        <strong>30s</strong>
+        <span>health refresh</span>
+      </div>
+      <div>
+        <strong>0</strong>
+        <span>tracking scripts</span>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .strip {
+    padding: 78px 0;
+    border-block: 1px solid var(--line);
+    background: var(--pink-soft);
+  }
+  .strip-grid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .strip h2 {
+    max-width: 480px;
+    margin-top: 16px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.08em;
+    line-height: 1;
+  }
+  .metrics {
+    display: flex;
+    gap: 35px;
+  }
+  .metrics div {
+    display: grid;
+    gap: 4px;
+  }
+  .metrics strong {
+    font-size: 1.5rem;
+    letter-spacing: -0.06em;
+  }
+  .metrics span {
+    color: var(--muted);
+    font:
+      10px "DM Mono",
+      monospace;
+    text-transform: uppercase;
+  }
+  @media (max-width: 720px) {
+    .strip-grid {
+      display: grid;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .metrics strong {
+      font-size: 1.25rem;
+    }
+  }
 </style>

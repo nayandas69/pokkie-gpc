@@ -1,2 +1,98 @@
-<section id="docs" class="docs"><div class="container docs-grid"><div class="section-heading"><span class="eyebrow">Simple by design</span><h2>One link.<br /><span>Anywhere.</span></h2><p>Use the live card URL in a README, portfolio, blog or social bio.</p></div><div class="doc-card"><div class="doc-label">Quick start</div><pre><code>https://github-profile-card-blue.vercel.app/card/{'{username}'}</code></pre><div class="doc-label">Markdown</div><pre><code>![Profile](https://github-profile-card-blue.vercel.app/card/you)</code></pre><a class="shock" href="https://github-profile-card-blue.vercel.app/card/nayandas69" target="_blank" rel="noreferrer">Open a live card ↗</a></div></div></section><style>.docs{padding:112px 0}.docs-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start}.docs h2 span{color:var(--pink)}.doc-card{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}.doc-label{margin-bottom:10px;color:var(--muted);font:11px 'DM Mono',monospace;text-transform:uppercase}.doc-card pre{margin-bottom:26px;padding:16px;overflow:auto;border-radius:10px;background:var(--pink-soft);color:var(--ink);font-size:12px;white-space:pre-wrap}.doc-card a{font-size:13px;font-weight:800;text-decoration:underline;text-underline-offset:4px}@media(max-width:720px){.docs{padding:75px 0}.docs-grid{grid-template-columns:1fr;gap:25px}}
+<section id="docs" class="docs">
+  <div class="container docs-grid">
+    <div class="section-heading">
+      <span class="eyebrow">Simple by design</span>
+      <h2>
+        Two links.
+        <br />
+        <span>Anywhere.</span>
+      </h2>
+      <p>
+        Add your profile card and a profile views badge to your README,
+        portfolio or blog.
+      </p>
+    </div>
+    <div class="doc-card">
+      <div class="doc-label">Quick start</div>
+      <pre><code>https://github-profile-card-blue.vercel.app/card/{'{username}'}</code></pre>
+      <div class="doc-label">Markdown</div>
+      <pre><code>![Profile](https://github-profile-card-blue.vercel.app/card/you)</code></pre>
+      <div class="doc-label">Profile views</div>
+      <pre><code>![Profile views](https://github-profile-card-blue.vercel.app/profile/you?theme=tokyonight)</code></pre>
+      <p class="views-note">
+        Replace you with your GitHub username. Both endpoints support all 56
+        themes. Views count image requests, including bots and repeated visits,
+        rather than unique visitors. GitHub caches README images, so each page
+        refresh may not increase the count. Badge storage failures display an
+        unavailable state.
+      </p>
+      <a
+        class="shock"
+        href="https://github-profile-card-blue.vercel.app/card/nayandas69"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Open a live card ↗
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+  .views-note {
+    margin-bottom: 26px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .docs {
+    padding: 112px 0;
+  }
+  .docs-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: start;
+  }
+  .docs h2 span {
+    color: var(--pink);
+  }
+  .doc-card {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+  .doc-label {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font:
+      11px "DM Mono",
+      monospace;
+    text-transform: uppercase;
+  }
+  .doc-card pre {
+    margin-bottom: 26px;
+    padding: 16px;
+    overflow: auto;
+    border-radius: 10px;
+    background: var(--pink-soft);
+    color: var(--ink);
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+  .doc-card a {
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  @media (max-width: 720px) {
+    .docs {
+      padding: 75px 0;
+    }
+    .docs-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
 </style>

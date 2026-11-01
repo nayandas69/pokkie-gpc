@@ -1,6 +1,379 @@
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Profiles with personality</span><h1>Make your GitHub look <em>properly you.</em></h1><p>Pokkie turns any GitHub profile into a bold, beautiful card. No fuss, no filler — just your work, framed brilliantly.</p><div class="actions"><a class="primary shock electric" href="#demo">Make my card <span>↗</span></a><a class="text-link" href="#users">Meet the community <span>↓</span></a></div><div class="status-pill" aria-live="polite"><span></span><span id="health-copy">Checking card service…</span><code id="health-time"></code><details><summary>Health JSON</summary><pre id="health-json">&#123;&quot;status&quot;:&quot;checking&quot;&#125;</pre></details></div></div><div class="hero-art"><div class="sticker">fresh from<br /><strong>your GitHub</strong></div><div class="card-stack"><div class="pink-layer layer-one"></div><div class="pink-layer layer-two"></div><figure class="real-card-frame"><div class="card-top"><span><i></i> live profile</span><a href="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight" target="_blank" rel="noreferrer" aria-label="Open the live nayandas69 profile card">↗</a></div><img src="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight" alt="Live GitHub profile card for nayandas69 using the Tokyo Night theme" /><figcaption id="hero-card-error" hidden>Live card unavailable. <button type="button" id="hero-card-retry">Try again</button></figcaption></figure></div></div></div></section>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Profiles with personality</span>
+      <h1>
+        Make your GitHub look <em>properly you.</em>
+      </h1>
+      <p>
+        Pokkie turns any GitHub profile into a bold, beautiful card with a
+        matching profile views badge. No fuss, no filler — just your work,
+        framed brilliantly.
+      </p>
+      <div class="actions">
+        <a class="primary shock electric" href="#demo">
+          Make my card <span>↗</span>
+        </a>
+        <a class="text-link" href="#users">
+          Meet the community <span>↓</span>
+        </a>
+      </div>
+      <div class="status-pill" aria-live="polite">
+        <span></span>
+        <span id="health-copy">Checking card service…</span>
+        <code id="health-time"></code>
+        <details>
+          <summary>Health JSON</summary>
+          <pre id="health-json">&#123;&quot;status&quot;:&quot;checking&quot;&#125;</pre>
+        </details>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="sticker">
+        fresh from
+        <br />
+        <strong>your GitHub</strong>
+      </div>
+      <div class="card-stack">
+        <div class="pink-layer layer-one"></div>
+        <div class="pink-layer layer-two"></div>
+        <figure class="real-card-frame">
+          <div class="card-top">
+            <span>
+              <i></i> live profile
+            </span>
+            <a
+              href="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the live nayandas69 profile card"
+            >
+              ↗
+            </a>
+          </div>
+          <img
+            src="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight"
+            alt="Live GitHub profile card for nayandas69 using the Tokyo Night theme"
+          />
+          <figcaption id="hero-card-error" hidden>
+            Live card unavailable.{" "}
+            <button type="button" id="hero-card-retry">
+              Try again
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 <script is:inline>
-const heroCard=document.querySelector('.real-card-frame img');const heroError=document.getElementById('hero-card-error');const heroRetry=document.getElementById('hero-card-retry');let heroRequest=0;let heroTimer;let heroExpected=heroCard?.src||'';function reloadHero(){const request=++heroRequest;clearTimeout(heroTimer);heroError.hidden=true;heroCard.hidden=false;heroCard.classList.add('is-loading');heroCard.src='https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight&refresh='+Date.now();heroExpected=heroCard.src;heroTimer=setTimeout(()=>{if(request!==heroRequest)return;heroCard.hidden=true;heroCard.classList.remove('is-loading');heroError.hidden=false},8000)}heroCard?.addEventListener('load',()=>{if(heroCard.src!==heroExpected)return;heroCard.classList.remove('is-loading');clearTimeout(heroTimer)});heroCard?.addEventListener('error',()=>{if(heroCard.src!==heroExpected)return;clearTimeout(heroTimer);heroCard.classList.remove('is-loading');heroCard.hidden=true;heroError.hidden=false});heroRetry?.addEventListener('click',reloadHero);
-const healthPill=document.querySelector('.status-pill');const healthCopy=document.getElementById('health-copy');const healthTime=document.getElementById('health-time');const healthJson=document.getElementById('health-json');async function checkHealth(){healthPill.className='status-pill is-checking';const started=performance.now();try{const response=await fetch('/api/health',{cache:'no-store'});const data=await response.json();if(!response.ok||data.status!=='ok')throw new Error('unhealthy');healthPill.className='status-pill is-healthy';healthCopy.textContent='Card service is live';healthTime.textContent=Math.round(performance.now()-started)+'ms';healthJson.textContent=JSON.stringify(data,null,2);}catch{healthPill.className='status-pill is-unverified';healthCopy.textContent='Unable to verify from this browser';healthTime.textContent='retrying';healthJson.textContent=JSON.stringify({status:'unverified',endpoint:'https://github-profile-card-blue.vercel.app/health'});}}checkHealth();setInterval(checkHealth,30000);
+  const heroCard = document.querySelector(".real-card-frame img");
+  const heroError = document.getElementById("hero-card-error");
+  const heroRetry = document.getElementById("hero-card-retry");
+  let heroRequest = 0;
+  let heroTimer;
+  let heroExpected = heroCard?.src || "";
+  function reloadHero() {
+    const request = ++heroRequest;
+    clearTimeout(heroTimer);
+    heroError.hidden = true;
+    heroCard.hidden = false;
+    heroCard.classList.add("is-loading");
+    heroCard.src =
+      "https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight&refresh=" +
+      Date.now();
+    heroExpected = heroCard.src;
+    heroTimer = setTimeout(() => {
+      if (request !== heroRequest) return;
+      heroCard.hidden = true;
+      heroCard.classList.remove("is-loading");
+      heroError.hidden = false;
+    }, 8000);
+  }
+  heroCard?.addEventListener("load", () => {
+    if (heroCard.src !== heroExpected) return;
+    heroCard.classList.remove("is-loading");
+    clearTimeout(heroTimer);
+  });
+  heroCard?.addEventListener("error", () => {
+    if (heroCard.src !== heroExpected) return;
+    clearTimeout(heroTimer);
+    heroCard.classList.remove("is-loading");
+    heroCard.hidden = true;
+    heroError.hidden = false;
+  });
+  heroRetry?.addEventListener("click", reloadHero);
+  const healthPill = document.querySelector(".status-pill");
+  const healthCopy = document.getElementById("health-copy");
+  const healthTime = document.getElementById("health-time");
+  const healthJson = document.getElementById("health-json");
+  async function checkHealth() {
+    healthPill.className = "status-pill is-checking";
+    const started = performance.now();
+    try {
+      const response = await fetch("/api/health", { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || data.status !== "ok") throw new Error("unhealthy");
+      healthPill.className = "status-pill is-healthy";
+      healthCopy.textContent = "Card service is live";
+      healthTime.textContent = Math.round(performance.now() - started) + "ms";
+      healthJson.textContent = JSON.stringify(data, null, 2);
+    } catch {
+      healthPill.className = "status-pill is-unverified";
+      healthCopy.textContent = "Unable to verify from this browser";
+      healthTime.textContent = "retrying";
+      healthJson.textContent = JSON.stringify({
+        status: "unverified",
+        endpoint: "https://github-profile-card-blue.vercel.app/health",
+      });
+    }
+  }
+  checkHealth();
+  setInterval(checkHealth, 30000);
 </script>
-<style>.hero{padding:92px 0 118px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr .95fr;align-items:center;gap:66px}.hero-copy{animation:rise .7s ease both}.hero h1{max-width:650px;margin-top:18px;font-size:clamp(3.2rem,7vw,6.5rem);letter-spacing:-.1em;line-height:.9}.hero h1 em{color:var(--pink);font-style:normal}.hero-copy>p{max-width:540px;margin-top:28px;color:var(--muted);font-size:1.12rem;line-height:1.75}.actions{display:flex;align-items:center;gap:24px;margin-top:34px}.text-link{font-size:13px;font-weight:800}.text-link span{color:var(--pink);margin-left:8px}.status-pill{display:inline-flex;align-items:center;gap:9px;margin-top:48px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font:11px 'DM Mono',monospace;color:var(--muted)}.status-pill span:first-child{width:7px;height:7px;border-radius:50%;background:#f0a52f;box-shadow:0 0 0 4px rgba(240,165,47,.12)}.status-pill.is-healthy span:first-child{background:#4fcb83;box-shadow:0 0 0 4px rgba(79,203,131,.12)}.status-pill.is-unverified span:first-child{background:#ff176f;box-shadow:0 0 0 4px rgba(255,23,111,.12)}.status-pill.is-checking span:first-child{animation:health-pulse 1s ease-in-out infinite alternate}@keyframes health-pulse{to{opacity:.35;transform:scale(.7)}}.status-pill code{color:var(--pink)}.status-pill details{position:relative}.status-pill summary{cursor:pointer;color:var(--ink);font-weight:700}.status-pill pre{position:absolute;z-index:5;top:calc(100% + 10px);right:0;width:min(330px,calc(100vw - 40px));padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font-size:10px;line-height:1.5;box-shadow:var(--shadow);white-space:pre-wrap}.hero-art{position:relative;min-height:500px;display:grid;place-items:center;animation:rise .8s .12s ease both}.card-stack{position:relative;width:min(100%,520px);padding:28px}.pink-layer{position:absolute;inset:35px 10px 10px;border-radius:28px;background:#ffb8d3;transform:rotate(-5deg)}.layer-two{inset:18px 22px 22px;background:#ffdce9;transform:rotate(2deg)}.real-card-frame{position:relative;z-index:2;padding:15px;border-radius:27px;background:var(--ink);box-shadow:var(--shadow);transform:rotate(4deg);animation:float 6s ease-in-out infinite}.real-card-frame img{display:block;width:100%;height:auto;border-radius:16px}.card-top{display:flex;align-items:center;justify-content:space-between;padding:0 4px 11px;color:var(--pink-soft);font:11px 'DM Mono',monospace;text-transform:uppercase}.card-top i{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 4px rgba(255,79,147,.16)}.card-top a{display:grid;place-items:center;width:28px;height:28px;border:1px solid #76566d;border-radius:50%;color:#fff}.real-card-frame figcaption{padding:18px;color:#fff;font:12px 'DM Mono',monospace}.real-card-frame figcaption button{margin-left:8px;color:var(--pink-soft);background:none;border:0;text-decoration:underline;cursor:pointer}.sticker{position:absolute;z-index:3;right:0;top:20px;padding:13px 18px;border-radius:12px;background:var(--pink);color:var(--ink);font:11px 'DM Mono',monospace;line-height:1.35;transform:rotate(8deg);box-shadow:7px 8px 0 var(--ink)}@media(max-width:760px){.hero{padding:68px 0 85px}.hero-grid{grid-template-columns:1fr;gap:42px}.hero h1{font-size:clamp(3rem,15vw,5rem)}.hero-art{min-height:390px}.card-stack{width:calc(100% + 20px);margin-left:-10px;padding:18px}.sticker{right:-2px;top:0}.real-card-frame{transform:rotate(2deg)}}@media(prefers-reduced-motion:reduce){.real-card-frame,.hero-copy,.hero-art{animation:none}}</style>
+<style>
+  .hero {
+    padding: 92px 0 118px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 66px;
+  }
+  .hero-copy {
+    animation: rise 0.7s ease both;
+  }
+  .hero h1 {
+    max-width: 650px;
+    margin-top: 18px;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    letter-spacing: -0.1em;
+    line-height: 0.9;
+  }
+  .hero h1 em {
+    color: var(--pink);
+    font-style: normal;
+  }
+  .hero-copy > p {
+    max-width: 540px;
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.75;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 34px;
+  }
+  .text-link {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .text-link span {
+    color: var(--pink);
+    margin-left: 8px;
+  }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 48px;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    font:
+      11px "DM Mono",
+      monospace;
+    color: var(--muted);
+  }
+  .status-pill span:first-child {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f0a52f;
+    box-shadow: 0 0 0 4px rgba(240, 165, 47, 0.12);
+  }
+  .status-pill.is-healthy span:first-child {
+    background: #4fcb83;
+    box-shadow: 0 0 0 4px rgba(79, 203, 131, 0.12);
+  }
+  .status-pill.is-unverified span:first-child {
+    background: #ff176f;
+    box-shadow: 0 0 0 4px rgba(255, 23, 111, 0.12);
+  }
+  .status-pill.is-checking span:first-child {
+    animation: health-pulse 1s ease-in-out infinite alternate;
+  }
+  @keyframes health-pulse {
+    to {
+      opacity: 0.35;
+      transform: scale(0.7);
+    }
+  }
+  .status-pill code {
+    color: var(--pink);
+  }
+  .status-pill details {
+    position: relative;
+  }
+  .status-pill summary {
+    cursor: pointer;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .status-pill pre {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(330px, calc(100vw - 40px));
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--ink);
+    font-size: 10px;
+    line-height: 1.5;
+    box-shadow: var(--shadow);
+    white-space: pre-wrap;
+  }
+  .hero-art {
+    position: relative;
+    min-height: 500px;
+    display: grid;
+    place-items: center;
+    animation: rise 0.8s 0.12s ease both;
+  }
+  .card-stack {
+    position: relative;
+    width: min(100%, 520px);
+    padding: 28px;
+  }
+  .pink-layer {
+    position: absolute;
+    inset: 35px 10px 10px;
+    border-radius: 28px;
+    background: #ffb8d3;
+    transform: rotate(-5deg);
+  }
+  .layer-two {
+    inset: 18px 22px 22px;
+    background: #ffdce9;
+    transform: rotate(2deg);
+  }
+  .real-card-frame {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 27px;
+    background: var(--ink);
+    box-shadow: var(--shadow);
+    transform: rotate(4deg);
+    animation: float 6s ease-in-out infinite;
+  }
+  .real-card-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 11px;
+    color: var(--pink-soft);
+    font:
+      11px "DM Mono",
+      monospace;
+    text-transform: uppercase;
+  }
+  .card-top i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: var(--pink);
+    box-shadow: 0 0 0 4px rgba(255, 79, 147, 0.16);
+  }
+  .card-top a {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #76566d;
+    border-radius: 50%;
+    color: #fff;
+  }
+  .real-card-frame figcaption {
+    padding: 18px;
+    color: #fff;
+    font:
+      12px "DM Mono",
+      monospace;
+  }
+  .real-card-frame figcaption button {
+    margin-left: 8px;
+    color: var(--pink-soft);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .sticker {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 20px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    background: var(--pink);
+    color: var(--ink);
+    font:
+      11px "DM Mono",
+      monospace;
+    line-height: 1.35;
+    transform: rotate(8deg);
+    box-shadow: 7px 8px 0 var(--ink);
+  }
+  @media (max-width: 760px) {
+    .hero {
+      padding: 68px 0 85px;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 15vw, 5rem);
+    }
+    .hero-art {
+      min-height: 390px;
+    }
+    .card-stack {
+      width: calc(100% + 20px);
+      margin-left: -10px;
+      padding: 18px;
+    }
+    .sticker {
+      right: -2px;
+      top: 0;
+    }
+    .real-card-frame {
+      transform: rotate(2deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .real-card-frame,
+    .hero-copy,
+    .hero-art {
+      animation: none;
+    }
+  }
+</style>

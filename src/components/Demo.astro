@@ -1,5 +1,460 @@
-<section id="demo" class="demo"><div class="container"><div class="section-heading"><span class="eyebrow">Your turn</span><h2>Pick a profile.<br /><span>Make it electric.</span></h2><p>Use the actual card service. Choose a theme, then copy the live URL anywhere you like.</p></div><div class="playground"><form class="controls" id="card-form"><label for="username">GitHub username</label><div class="input-row"><span>github.com/</span><input id="username" name="username" value="nayandas69" autocomplete="off" /></div><label for="theme">Card theme</label><select id="theme" aria-describedby="theme-help"><option value="default">Default</option><option value="dark">Dark</option><option value="dracula">Dracula</option><option value="monokai">Monokai</option><option value="nord">Nord</option><option value="github_dark">GitHub Dark</option><option value="slate">Slate</option><option value="midnight">Midnight</option><option value="highcontrast">High Contrast</option><option value="pearl">Pearl</option><option value="ice">Ice</option><option value="sand">Sand</option><option value="pastel_peach">Pastel Peach</option><option value="pastel_mint">Pastel Mint</option><option value="pastel_lavender">Pastel Lavender</option><option value="pastel_lemon">Pastel Lemon</option><option value="pastel_rose">Pastel Rose</option><option value="mui_blue">MUI Blue</option><option value="mui_indigo">MUI Indigo</option><option value="mui_teal">MUI Teal</option><option value="mui_deep_purple">MUI Deep Purple</option><option value="mui_orange">MUI Orange</option><option value="mui_red">MUI Red</option><option value="vscode_dark_plus">VS Code Dark Plus</option><option value="vscode_light">VS Code Light</option><option value="vscode_monokai_pro">VS Code Monokai Pro</option><option value="vscode_night_owl">VS Code Night Owl</option><option value="vscode_palenight">VS Code Palenight</option><option value="twitter">Twitter</option><option value="discord">Discord</option><option value="spotify">Spotify</option><option value="github_light">GitHub Light</option><option value="youtube">YouTube</option><option value="instagram">Instagram</option><option value="radical">Radical</option><option value="cyberpunk">Cyberpunk</option><option value="synthwave">Synthwave</option><option value="oceanic">Oceanic</option><option value="mint">Mint</option><option value="royal">Royal</option><option value="gruvbox">Gruvbox</option><option value="merko">Merko</option><option value="forest">Forest</option><option value="rose">Rose</option><option value="sunset">Sunset</option><option value="lavender">Lavender</option><option value="ember">Ember</option><option value="tokyonight">Tokyo Night</option><option value="onedark">One Dark</option><option value="cobalt">Cobalt</option><option value="amoled_blue">AMOLED Blue</option><option value="amoled_green">AMOLED Green</option><option value="amoled_purple">AMOLED Purple</option><option value="grayscale_light">Grayscale Light</option><option value="grayscale_mid">Grayscale Mid</option><option value="grayscale_dark">Grayscale Dark</option></select><small id="theme-help">56 styles available</small><button class="primary shock electric" type="submit">Refresh live card <span>↗</span></button><p class="form-status" id="form-status" aria-live="polite"></p></form><div class="preview"><div class="preview-head"><span><i></i> real live preview</span><button type="button" id="copy-btn">Copy URL</button></div><div class="preview-body"><img id="card-preview" src="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight" alt="Live GitHub profile card for nayandas69" /><div class="preview-error" id="preview-error" hidden><strong>That profile card could not load.</strong><button type="button" id="retry-btn">Try again</button></div></div><code id="markdown-code">![GitHub profile card](https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight)</code></div></div></div></section>
+<section id="demo" class="demo">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Your turn</span>
+      <h2>
+        Pick a profile.
+        <br />
+        <span>Make it electric.</span>
+      </h2>
+      <p>
+        Preview your profile card and profile views badge. Choose a theme, then
+        copy either live URL.
+      </p>
+    </div>
+    <div class="playground">
+      <form class="controls" id="card-form">
+        <label for="username">GitHub username</label>
+        <div class="input-row">
+          <span>github.com/</span>
+          <input
+            id="username"
+            name="username"
+            value="nayandas69"
+            autocomplete="off"
+          />
+        </div>
+        <label for="theme">Preview theme</label>
+        <select id="theme" aria-describedby="theme-help">
+          <option value="default">Default</option>
+          <option value="dark">Dark</option>
+          <option value="dracula">Dracula</option>
+          <option value="monokai">Monokai</option>
+          <option value="nord">Nord</option>
+          <option value="github_dark">GitHub Dark</option>
+          <option value="slate">Slate</option>
+          <option value="midnight">Midnight</option>
+          <option value="highcontrast">High Contrast</option>
+          <option value="pearl">Pearl</option>
+          <option value="ice">Ice</option>
+          <option value="sand">Sand</option>
+          <option value="pastel_peach">Pastel Peach</option>
+          <option value="pastel_mint">Pastel Mint</option>
+          <option value="pastel_lavender">Pastel Lavender</option>
+          <option value="pastel_lemon">Pastel Lemon</option>
+          <option value="pastel_rose">Pastel Rose</option>
+          <option value="mui_blue">MUI Blue</option>
+          <option value="mui_indigo">MUI Indigo</option>
+          <option value="mui_teal">MUI Teal</option>
+          <option value="mui_deep_purple">MUI Deep Purple</option>
+          <option value="mui_orange">MUI Orange</option>
+          <option value="mui_red">MUI Red</option>
+          <option value="vscode_dark_plus">VS Code Dark Plus</option>
+          <option value="vscode_light">VS Code Light</option>
+          <option value="vscode_monokai_pro">VS Code Monokai Pro</option>
+          <option value="vscode_night_owl">VS Code Night Owl</option>
+          <option value="vscode_palenight">VS Code Palenight</option>
+          <option value="twitter">Twitter</option>
+          <option value="discord">Discord</option>
+          <option value="spotify">Spotify</option>
+          <option value="github_light">GitHub Light</option>
+          <option value="youtube">YouTube</option>
+          <option value="instagram">Instagram</option>
+          <option value="radical">Radical</option>
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="synthwave">Synthwave</option>
+          <option value="oceanic">Oceanic</option>
+          <option value="mint">Mint</option>
+          <option value="royal">Royal</option>
+          <option value="gruvbox">Gruvbox</option>
+          <option value="merko">Merko</option>
+          <option value="forest">Forest</option>
+          <option value="rose">Rose</option>
+          <option value="sunset">Sunset</option>
+          <option value="lavender">Lavender</option>
+          <option value="ember">Ember</option>
+          <option value="tokyonight">Tokyo Night</option>
+          <option value="onedark">One Dark</option>
+          <option value="cobalt">Cobalt</option>
+          <option value="amoled_blue">AMOLED Blue</option>
+          <option value="amoled_green">AMOLED Green</option>
+          <option value="amoled_purple">AMOLED Purple</option>
+          <option value="grayscale_light">Grayscale Light</option>
+          <option value="grayscale_mid">Grayscale Mid</option>
+          <option value="grayscale_dark">Grayscale Dark</option>
+        </select>
+        <small id="theme-help">56 styles available</small>
+        <button class="primary shock electric" type="submit">
+          Refresh live previews <span>↗</span>
+        </button>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+      </form>
+      <div class="preview">
+        <div class="preview-head">
+          <span>
+            <i></i> real live preview
+          </span>
+          <button type="button" id="copy-btn">
+            Copy URL
+          </button>
+        </div>
+        <div class="preview-body">
+          <img
+            id="card-preview"
+            src="https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight"
+            alt="Live GitHub profile card for nayandas69"
+          />
+          <div class="preview-error" id="preview-error" hidden>
+            <strong>That profile card could not load.</strong>
+            <button type="button" id="retry-btn">
+              Try again
+            </button>
+          </div>
+        </div>
+        <code id="markdown-code">
+          ![GitHub profile
+          card](https://github-profile-card-blue.vercel.app/card/nayandas69?theme=tokyonight)
+        </code>
+      </div>
+      <div class="preview badge-preview">
+        <div class="preview-head">
+          <span>live profile views</span>
+          <button type="button" id="views-copy-btn" disabled>
+            Copy URL
+          </button>
+        </div>
+        <div class="preview-body">
+          <img id="views-preview" alt="Live profile views" hidden />
+          <div class="preview-error" id="views-error" hidden>
+            <strong>The profile views badge could not load.</strong>
+            <button type="button" id="views-retry-btn">
+              Try again
+            </button>
+          </div>
+        </div>
+        <code id="views-markdown-code"></code>
+        <p class="badge-note">
+          Counts image requests, including this preview. GitHub image caching
+          may delay updates.
+        </p>
+        <p class="form-status" id="views-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
 <script is:inline>
-const base='https://github-profile-card-blue.vercel.app';const form=document.getElementById('card-form');const preview=document.getElementById('card-preview');const code=document.getElementById('markdown-code');const status=document.getElementById('form-status');const error=document.getElementById('preview-error');const copyButton=document.getElementById('copy-btn');const usernameInput=document.getElementById('username');const themeInput=document.getElementById('theme');const allowedThemes=new Set([...themeInput.options].map(option=>option.value));let currentUrl='';let requestId=0;let requestTimer;let expectedUrl='';function makeUrl(){const user=usernameInput.value.trim().replace(/^@/,'');const theme=themeInput.value;if(!/^[a-zA-Z0-9-]{1,39}$/.test(user)||!allowedThemes.has(theme))return null;return `${base}/card/${encodeURIComponent(user)}?theme=${encodeURIComponent(theme)}`}function update(){const url=makeUrl();currentUrl='';copyButton.disabled=true;if(!url){status.textContent='Use a valid GitHub username and theme.';preview.hidden=true;error.hidden=false;return}status.textContent='Loading the real profile card…';error.hidden=true;preview.hidden=false;preview.classList.add('is-loading');const id=++requestId;clearTimeout(requestTimer);expectedUrl=url;preview.src=url;requestTimer=setTimeout(()=>{if(id!==requestId||preview.src!==expectedUrl)return;preview.hidden=true;error.hidden=false;preview.classList.remove('is-loading');status.textContent='The card took too long to load. Try again.'},8000);code.textContent=`![GitHub profile card](${url})`}form.addEventListener('submit',e=>{e.preventDefault();update()});copyButton.addEventListener('click',async()=>{if(!currentUrl)return;try{await navigator.clipboard.writeText(currentUrl);status.textContent='Live card URL copied.'}catch{status.textContent='Copy unavailable — use the Markdown line below.'}});preview.addEventListener('load',()=>{if(preview.src!==expectedUrl)return;clearTimeout(requestTimer);currentUrl=preview.src;copyButton.disabled=false;preview.classList.remove('is-loading');status.textContent='Real profile card ready.'});preview.addEventListener('error',()=>{if(preview.src!==expectedUrl)return;clearTimeout(requestTimer);currentUrl='';copyButton.disabled=true;preview.classList.remove('is-loading');preview.hidden=true;error.hidden=false;status.textContent='We could not load that GitHub profile.'});document.getElementById('retry-btn').addEventListener('click',update);themeInput.value='tokyonight';update();
+  (() => {
+    const base = "https://github-profile-card-blue.vercel.app";
+    const form = document.getElementById("card-form");
+    const usernameInput = document.getElementById("username");
+    const themeInput = document.getElementById("theme");
+    const allowedThemes = new Set(
+      [...themeInput.options].map((option) => option.value),
+    );
+    function createPreview({
+      imageId,
+      errorId,
+      copyId,
+      codeId,
+      statusId,
+      retryId,
+      endpoint,
+      label,
+    }) {
+      let image = document.getElementById(imageId);
+      const error = document.getElementById(errorId);
+      const copy = document.getElementById(copyId);
+      const code = document.getElementById(codeId);
+      const status = document.getElementById(statusId);
+      let generation = 0;
+      let timer;
+      let currentUrl = "";
+      function update() {
+        const request = ++generation;
+        clearTimeout(timer);
+        currentUrl = "";
+        copy.disabled = true;
+        image.hidden = true;
+        image.classList.remove("is-loading");
+        image.onload = image.onerror = null;
+        image.removeAttribute("src");
+        error.hidden = true;
+        code.textContent = "";
+        const username = usernameInput.value.trim().replace(/^@/, "");
+        const theme = themeInput.value;
+        if (
+          !/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?$/.test(username) ||
+          username.includes("--") ||
+          !allowedThemes.has(theme)
+        ) {
+          status.textContent = "Use a valid GitHub username and theme.";
+          return;
+        }
+        const url = `${base}/${endpoint}/${encodeURIComponent(username)}?theme=${encodeURIComponent(theme)}`;
+        code.textContent = `![${label}](${url})`;
+        status.textContent = `Loading ${label.toLowerCase()}…`;
+        image.alt = `${label} for ${username}`;
+        image.classList.add("is-loading");
+        // Load into a separate image so superseded requests cannot change the UI.
+        const pending = new Image();
+        function fail(message) {
+          if (request !== generation) return;
+          clearTimeout(timer);
+          generation++;
+          image.hidden = true;
+          image.classList.remove("is-loading");
+          error.hidden = false;
+          status.textContent = message;
+        }
+        pending.onload = () => {
+          if (request !== generation) return;
+          clearTimeout(timer);
+          for (const attribute of image.attributes) {
+            if (attribute.name !== "src") {
+              pending.setAttribute(attribute.name, attribute.value);
+            }
+          }
+          pending.onload = pending.onerror = null;
+          image.replaceWith(pending);
+          image = pending;
+          image.hidden = false;
+          image.classList.remove("is-loading");
+          currentUrl = url;
+          copy.disabled = false;
+          status.textContent = `${label} ready.`;
+        };
+        pending.onerror = () => fail(`${label} unavailable. Try again.`);
+        timer = setTimeout(
+          () => fail(`${label} took too long to load. Try again.`),
+          10000,
+        );
+        pending.src = url;
+      }
+      document.getElementById(retryId).addEventListener("click", update);
+      copy.addEventListener("click", async () => {
+        if (!currentUrl) return;
+        try {
+          await navigator.clipboard.writeText(currentUrl);
+          status.textContent = `${label} URL copied.`;
+        } catch {
+          status.textContent =
+            "Copy unavailable — use the Markdown line above.";
+        }
+      });
+      return update;
+    }
+    const updateCard = createPreview({
+      imageId: "card-preview",
+      errorId: "preview-error",
+      copyId: "copy-btn",
+      codeId: "markdown-code",
+      statusId: "form-status",
+      retryId: "retry-btn",
+      endpoint: "card",
+      label: "GitHub profile card",
+    });
+    const updateViews = createPreview({
+      imageId: "views-preview",
+      errorId: "views-error",
+      copyId: "views-copy-btn",
+      codeId: "views-markdown-code",
+      statusId: "views-status",
+      retryId: "views-retry-btn",
+      endpoint: "profile",
+      label: "Profile views",
+    });
+    themeInput.value = "tokyonight";
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      updateCard();
+      updateViews();
+    });
+    updateCard();
+    updateViews();
+  })();
 </script>
-<style>.demo{padding:112px 0;background:var(--ink);color:#fff}.demo .eyebrow{color:var(--pink-soft)}.demo .section-heading p{color:#d8cbd4}.section-heading h2 span{color:var(--pink)}.playground{display:grid;grid-template-columns:290px 1fr;gap:28px;padding:28px;border-radius:25px;background:#3a2937}.controls{display:flex;flex-direction:column;gap:11px}.controls label{color:#f5e8ef;font:12px 'DM Mono',monospace}.input-row{display:flex;align-items:center;padding:12px 13px;border:1px solid #76566d;border-radius:11px;background:#281d27;color:#aa8d9f;font:11px 'DM Mono',monospace}.input-row input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:#fff}.controls select{padding:13px;border:1px solid #76566d;border-radius:11px;background:#281d27;color:#fff}.controls select:focus-visible{border-color:var(--pink);box-shadow:0 0 0 3px rgba(255,79,147,.22)}.controls small{color:#b99eaf;font:11px 'DM Mono',monospace}.controls .primary{margin-top:11px}.form-status{min-height:24px;color:var(--pink-soft);font-size:12px}.preview-head button:disabled{cursor:not-allowed;opacity:.45}.preview-body img.is-loading{opacity:.35;filter:blur(2px);animation:pulse 1s ease-in-out infinite alternate}@keyframes pulse{to{opacity:.58}}.preview{min-width:0;padding:18px;border-radius:17px;background:var(--paper);color:var(--ink)}.preview-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line);font:11px 'DM Mono',monospace;text-transform:uppercase}.preview-head i{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#4fcb83}.preview-head button,.preview-error button{border:1px solid var(--line);border-radius:999px;background:transparent;padding:7px 12px;cursor:pointer;font-size:12px}.preview-body{display:grid;place-items:center;min-height:280px;padding:26px 10px}.preview-body img{display:block;max-width:100%;border-radius:12px;box-shadow:var(--shadow)}.preview code{display:block;padding:13px;overflow:auto;border-radius:9px;background:var(--pink-soft);color:var(--ink);font-size:11px;white-space:nowrap}.preview-error{display:grid;gap:12px;place-items:center;color:var(--muted);font-size:13px}@media(max-width:760px){.demo{padding:75px 0}.playground{grid-template-columns:1fr;padding:16px}.preview-body{min-height:220px}}</style>
+<style>
+  .badge-preview {
+    grid-column: 2;
+  }
+  .badge-preview .preview-body {
+    min-height: 120px;
+  }
+  .badge-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .demo {
+    padding: 112px 0;
+    background: var(--ink);
+    color: #fff;
+  }
+  .demo .eyebrow {
+    color: var(--pink-soft);
+  }
+  .demo .section-heading p {
+    color: #d8cbd4;
+  }
+  .section-heading h2 span {
+    color: var(--pink);
+  }
+  .playground {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 28px;
+    padding: 28px;
+    border-radius: 25px;
+    background: #3a2937;
+  }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .controls label {
+    color: #f5e8ef;
+    font:
+      12px "DM Mono",
+      monospace;
+  }
+  .input-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 13px;
+    border: 1px solid #76566d;
+    border-radius: 11px;
+    background: #281d27;
+    color: #aa8d9f;
+    font:
+      11px "DM Mono",
+      monospace;
+  }
+  .input-row input {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+  }
+  .controls select {
+    padding: 13px;
+    border: 1px solid #76566d;
+    border-radius: 11px;
+    background: #281d27;
+    color: #fff;
+  }
+  .controls select:focus-visible {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(255, 79, 147, 0.22);
+  }
+  .controls small {
+    color: #b99eaf;
+    font:
+      11px "DM Mono",
+      monospace;
+  }
+  .controls .primary {
+    margin-top: 11px;
+  }
+  .form-status {
+    min-height: 24px;
+    color: var(--pink-soft);
+    font-size: 12px;
+  }
+  .preview-head button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  .preview-body img.is-loading {
+    opacity: 0.35;
+    filter: blur(2px);
+    animation: pulse 1s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    to {
+      opacity: 0.58;
+    }
+  }
+  .preview {
+    min-width: 0;
+    padding: 18px;
+    border-radius: 17px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .preview-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    font:
+      11px "DM Mono",
+      monospace;
+    text-transform: uppercase;
+  }
+  .preview-head i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #4fcb83;
+  }
+  .preview-head button,
+  .preview-error button {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .preview-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: center;
+    min-height: 280px;
+    padding: 26px 10px;
+  }
+  .preview-body img {
+    display: block;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+  .preview code {
+    display: block;
+    padding: 13px;
+    overflow: auto;
+    border-radius: 9px;
+    background: var(--pink-soft);
+    color: var(--ink);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .preview-error {
+    display: grid;
+    gap: 12px;
+    place-items: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  @media (max-width: 760px) {
+    .badge-preview {
+      grid-column: 1;
+    }
+    .demo {
+      padding: 75px 0;
+    }
+    .playground {
+      grid-template-columns: 1fr;
+      padding: 16px;
+    }
+    .preview-body {
+      min-height: 220px;
+    }
+  }
+</style>
